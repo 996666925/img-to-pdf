@@ -1,0 +1,32 @@
+[package]
+name = "img-to-pdf"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gpui-kit = "0.8"
+image = { version = "0.25", default-features = false, features = [
+    "png",
+    "jpeg",
+    "webp",
+    "gif",
+    "bmp",
+    "tiff",
+    "ico",
+    "tga",
+    "qoi",
+    "pnm",
+    "dds",
+    "hdr",
+] }
+pdf-writer = "0.15"
+flate2 = "1"
+
+[dev-dependencies]
+lopdf = "0.46"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2
